@@ -1,0 +1,20 @@
+<script src="../lib/tracery.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<h1>Text will go here</h1>
+<button onclick="generate()">Generate</button>
+<script>
+var grammarObj = {
+	"S": ["#Guys# #Doesanyone# #Overthere#. #Closing#"],
+	"Guys": ["guys", "dude", "what,", "shit", "hey you", "hey, hey","hey, hey guys"],
+	"Doesanyone": ["what is that", "do you see that", "there's something", "is that something", "does anyone see that"],
+	"Overthere": ["over there", "next to that", "here with us", "thing", "thing over there", "between us", "between you and i"],
+	"Closing": ["do you think it will ever go away?","can you see it?","i don't like it","whose is it? #Question#", "i'm scared of it", "it keeps getting closer", "it keeps moving further away", "do you think it's lost?"],
+	"Question": ["is it mine or yours?", "is it mine?"],	
+}
+var grammar = tracery.createGrammar(grammarObj)
+function generate(){
+	var t = grammar.flatten("#S#");
+	$('h1').text(t);
+}
+</script>
