@@ -1,0 +1,17 @@
+<script src="../lib/tracery.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<h1>Text will go here</h1>
+<button onclick="generate()">Generate</button>
+<script>
+var markov = new MarkovGeneratorWord(1,15)
+$.get("starboylyrics.txt", function(text) {
+     markov.feed(text);
+
+});
+function generate(){
+	var t = markov.generate()
+	$('h1').text(t);
+
+}
+</script>
