@@ -1,0 +1,20 @@
+<script src="../lib/tracery.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<h1>Text will go here</h1>
+<button onclick="generate()">Generate</button>
+<script>
+var grammarObj = {
+	"S": ["#Person#'s #CookingVessel# #Flavor# #Food#, #guarantee#!"],
+	"Person": ["Martha Stewart", "Rachel Ray", "Mom", "Famous Dave"],
+	"CookingVessel": ["Crock pot," "Wok", "Easy-Bake Oven", "Smoked"],
+	"Flavor": ["Pumpkin Spice", "Butterscotch", "chocolate", "mint", "fruity"],
+	"Food": ["Ravioli", "fruit", "steak", "baked ziti", "toast"],
+	"guarantee": ["sure to knock your socks off", "always a good time", "best in PA", "horrible"]	
+}
+var grammar = tracery.createGrammar(grammarObj)
+function generate(){
+	var t = grammar.flatten("#S#");
+	$('h1').text(t);
+}
+</script>
