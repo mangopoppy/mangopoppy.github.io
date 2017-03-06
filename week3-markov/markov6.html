@@ -4,7 +4,7 @@
 <script src="../lib/markov.js"></script>
 <script>
 var txt;
-var markov = new MarkovGeneratorWord(1,60)
+var markov = new MarkovGeneratorWord(1,40)
 $.get("Mango.txt", function(text) {
      markov.feed(text);
 });
