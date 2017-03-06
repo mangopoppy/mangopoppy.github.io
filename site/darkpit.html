@@ -8,20 +8,16 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
-input.userInput {
-	color: #fff;
-}
 p {
 	color: white;
 }
 
 </style>
 <body>
-    <input type="text" id="userInput"> give me input</input>
+    <input type="text" id="userInput"><p>give me input</p></input>
     <button id="submitter">Submit</button>
-    <div id="output"></div>
-    <script>
+    <div id="output"><p></p></div>
+    <p><script>
         var didClickIt = false;
         document.getElementById("submitter").addEventListener("click",function(){
             // same as onclick, keeps the JS and HTML separate
@@ -41,6 +37,6 @@ p {
                 }
             }
         },500);
-    </script>
+    </script></p>
 </body>
 </html>
